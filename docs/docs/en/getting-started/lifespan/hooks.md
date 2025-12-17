@@ -25,6 +25,9 @@ There are **four types of hooks**:
 3. `on_shutdown` — before the broker is disconnected
 4. `after_shutdown` — after the broker is disconnected
 
+!!! tip
+    If you prefer to use `FastStream(lifespan=...)`, refer to the [Lifespan Options](./context.md){.internal-link} section instead.
+
 ## Resource availability by hooks
 
 The table below summarizes what is available in each of the hooks at different stages of the broker's life.
@@ -199,8 +202,8 @@ Also, we don't want the model to finish its work incorrectly when the applicatio
 
 If you want to declare multiple lifecycle hooks, they will be used in the order they are registered:
 
-```python linenums="1" hl_lines="6 11"
-{! docs_src/getting_started/lifespan/multiple.py !}
+```python linenums="1" hl_lines="8 13"
+{! docs_src/getting_started/lifespan/multiple.py [ln:1-5,16-] !}
 ```
 
 ## Some more details
